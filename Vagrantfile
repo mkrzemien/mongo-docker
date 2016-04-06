@@ -31,5 +31,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   for i in 49150..49299
       config.vm.network :forwarded_port, guest: i, host: i
   end
+  for i in 32750..32899
+      config.vm.network :forwarded_port, guest: i, host: i
+  end
   config.vm.network :forwarded_port, guest: 53, host: 49300
 end
