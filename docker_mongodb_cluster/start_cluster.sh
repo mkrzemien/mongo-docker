@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Docker interface ip
-DOCKERIP="10.1.42.1"
+DOCKERIP=`ifconfig docker0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://'`
 LOCALPATH="/home/vagrant/docker"
 
 # Clean up
