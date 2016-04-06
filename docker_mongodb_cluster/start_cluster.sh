@@ -12,7 +12,7 @@ for c in ${containers[@]}; do
 done
 
 # Uncomment to build mongo image yourself otherwise it will download from docker index.
-#docker build -t jacksoncage/mongo ${LOCALPATH}/mongo > /dev/null 2>&1
+docker build -t jacksoncage/mongo ${LOCALPATH}/mongo # > /dev/null 2>&1
 
 # Setup skydns/skydock
 docker run -d -p ${DOCKERIP}:53:53/udp --name skydns crosbymichael/skydns -nameserver 8.8.8.8:53 -domain docker
